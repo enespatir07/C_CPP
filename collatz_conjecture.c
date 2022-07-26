@@ -1,10 +1,11 @@
 /*
-Description: An conjecture which, taking a number n, if n is even, divides it by 2,
-or if n is odd, multiplies it by 3 and adds 1 to obtain 3n + 1, then repeats the process to give 1.
+*Description: An conjecture which, taking a number n, if n is even, divides it by 2,
+*or if n is odd, multiplies it by 3 and adds 1 to obtain 3n + 1, then repeats the process to give 1.
 */
+
 /*
-FLOW OF THE PROGRAM -> Takes the length and the first element of the sequence,
-prints out the sequence, then finds where the loop begins and finally prints out the histogram of sequence
+*FLOW OF THE PROGRAM -> Takes the length and the first element of the sequence,
+*prints out the sequence, then finds where the loop begins and finally prints out the histogram of sequence
 */
 #include <stdio.h>
 #include <stdlib.h>
