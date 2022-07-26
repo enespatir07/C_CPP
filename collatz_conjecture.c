@@ -123,9 +123,6 @@ void hist_of_firstdigits(void (*f)(int,int,int,int*), int xs, int seqlen, int *h
     f(xs,0,seqlen,seq);//GENERATING SEQUENCE
     seqnum = seq[seqlen-1];
     if(seqnum<10){
-        /*LETS SAY seqnum EQUALS 6 SO WHAT I DO IS INCREMENTING BY 1 EVERY TIME FUNCTION'S CALLED
-          THE NUMBER (WHICH IS INITIALIZED AS 0 ) AT INDEX 6 OF h int ARRAY SO THAT AT INDEX 6 (WHICH IS HISTOGRAM OF 6)
-          I WILL KNOW HOW MANY 6 NUMBERS AS FIRST DIGITS THERE ARE IN THE SEQUENCE.*/
         flag++;
         h[seqnum]++;
     }
