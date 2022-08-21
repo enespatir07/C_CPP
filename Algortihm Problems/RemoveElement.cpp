@@ -13,3 +13,4 @@ int removeElement(vector<int> &nums, int val) {
     return nums.size();//returns the new length of vector
 }
 
+int main(){}
