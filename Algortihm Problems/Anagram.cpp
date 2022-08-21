@@ -1,7 +1,7 @@
 #include <iostream>
 using std::string;
 
-static bool isAnagram(string s, string t) {
+bool isAnagram(string s, string t) {
     int flag = 0;
     if (s.length() != t.length()) // check if lengths match
         return false;
