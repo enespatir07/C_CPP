@@ -10,4 +10,4 @@ int *TwoSum(int *nums, int target, int n, int *x) {
     }
     return x;
 }
-
+int main(){}
