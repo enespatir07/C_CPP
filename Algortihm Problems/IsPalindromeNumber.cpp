@@ -18,13 +18,3 @@ public:
         return rev == x;
     }
 };
-
-int main() {
-    int input;
-    std::cout << "Please enter the number to learn if it is a palindrome: ";
-    std::cin >> input;
-    if (Solution::isPalindrome(input))
-        std::cout << input << " is a palindrome" << std::endl;
-    else
-        std::cout << input << " is not a palindrome" << std::endl;
-}
