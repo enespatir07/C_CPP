@@ -19,7 +19,7 @@ public:
         for (int i = 0; i < ransomNote.length(); i++) {
             char r = ransomNote.at(i);
             if (r != '-') {
-                if (check(r, magazine) == false)
+                if (!(check(r, magazine)))
                     return false;
             }
         }
