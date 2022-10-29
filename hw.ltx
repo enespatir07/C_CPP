@@ -1,0 +1,256 @@
+\documentclass[a4 paper]{article}
+\usepackage[inner=2.0cm,outer=2.0cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage[ruled]{algorithm2e}
+\usepackage[rgb]{xcolor}
+\usepackage{verbatim}
+\usepackage{subcaption}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,tikz,amssymb,tkz-linknodes}
+\usepackage{fancyhdr}
+\usepackage[colorlinks=true, urlcolor=blue,  linkcolor=blue, citecolor=blue]{hyperref}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{rotating}
+\usepackage{booktabs}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{rem}[thm]{Remark}
+\numberwithin{equation}{section}
+
+\newcommand{\homework}[6]{
+   \pagestyle{myheadings}
+   \thispagestyle{plain}
+   \newpage
+   \setcounter{page}{1}
+   \noindent
+   \begin{center}
+   \framebox{
+      \vbox{\vspace{2mm}
+    \hbox to 6.28in { {\bf CSE 211:~Discrete Mathematics \hfill {\small (#2)}} }
+       \vspace{6mm}
+       \hbox to 6.28in { {\Large \hfill #1  \hfill} }
+       \vspace{6mm}
+       \hbox to 6.28in { {\it Instructor: {\rm #3} \hfill Name: Abdullah Enes Patır {\rm #5} \hfill Student Id: 200104004005 {\rm #6}} \hfill}
+       \hbox to 6.28in { {\it Assistant: #4  \hfill #6}}
+      \vspace{2mm}}
+   }
+   \end{center}
+   \markboth{#5 -- #1}{#5 -- #1}
+   \vspace*{4mm}
+}
+
+\newcommand{\problem}[2]{~\\\fbox{\textbf{Problem #1}}\hfill (#2 points)\newline\newline}
+\newcommand{\subproblem}[1]{~\newline\textbf{(#1)}}
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\Hy}{\mathcal{H}}
+\newcommand{\VS}{\textrm{VS}}
+\newcommand{\solution}{~\newline\textbf{\textit{(Solution)}} }
+
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbX}{\mathbb{X}}
+\newcommand{\bI}{\mathbf{I}}
+\newcommand{\bX}{\mathbf{X}}
+\newcommand{\bY}{\mathbf{Y}}
+\newcommand{\bepsilon}{\boldsymbol{\epsilon}}
+\newcommand{\balpha}{\boldsymbol{\alpha}}
+\newcommand{\bbeta}{\boldsymbol{\beta}}
+\newcommand{\0}{\mathbf{0}}
+
+
+\begin{document}
+\homework{Homework \#1}{Due: 30/10/22}{Dr. Zafeirakis Zafeirakopoulos}{Başak Karakaş}{}{}
+\textbf{Course Policy}: Read all the instructions below carefully before you start working on the assignment, and before you make a submission.
+\begin{itemize}
+\item It is not a group homework. Do not share your answers to anyone in any circumstance. Any cheating means at least -100 for both sides. 
+\item Do not take any information from Internet.
+\item No late homework will be accepted. 
+\item For any questions about the homework, send an email to bkarakas2018@gtu.edu.tr
+\item Use LaTeX. You can work on the tex file shared with you in the assignment document.
+\item Submit both the tex and pdf files into Homework1. Name of the files should be "\emph{SurnameName$\_$Id.tex}" and "\emph{SurnameName$\_$Id.pdf}".
+\end{itemize}
+
+\problem{1: Sets}{3+3+3+3+3=15}
+Which of the following sets are equal? Show your work step by step.\newline
+\subproblem{a} $\{$t : t is a root of $x^2$ – 6x + 8 = 0$\}$
+\newline
+\subproblem{b} $\{$y : y is a real number in the closed interval [2, 3]$\}$
+\newline
+\subproblem{c} $\{$4, 2, 5, 4$\}$
+\newline
+\subproblem{d} $\{$4, 5, 7, 2$\}$ - $\{$5, 7$\}$
+\newline
+\subproblem{e} $\{$q: q is either the number of sides of a rectangle or the number of digits in any integer between 11 and 99$\}$\\
+\solution
+\newline
+(a) : $\{$4, 2$\}$
+\newline
+(b) : $\{$2, 3$\}$
+\newline
+(c) : $\{$4, 2, 5, 4$\}$
+\newline
+(d) : $\{$4, 2$\}$
+\newline
+(e) : $\{$4, 2$\}$
+\newline\newline
+Therefore set a, d and e are equal.
+\newline
+
+
+\newpage
+\problem{2: Cardinality of Sets}{2+2+2+2=8}
+What is the cardinality of each of these sets? Explain your answers.\\
+\subproblem{a} $\{\emptyset\}$\\
+\subproblem{b} $\{\emptyset,\{\emptyset\}\}$\\
+\subproblem{c} $\{\emptyset,\{\emptyset,\{\emptyset\}\}\}$\\
+\subproblem{d} $\{\emptyset,\{\emptyset,\{\emptyset,\{\emptyset\}\}\}\}$\\
+\solution
+\newline
+(a): Since $\emptyset$ , which is an empty set, is equal to $\{\}$  so the set of a is \verb|->| $\{\{\}\}$.\newline
+Elements of set a are \verb|->| $\emptyset$. Therefore cardinality of a is 1.\\\\ 
+(b): Elements of set b are \verb|->| $\emptyset$ and $\{\emptyset\}$.\\
+Therefore cardinality of b 2.\\\\
+(c): Elements of set c are \verb|->| $\emptyset$ and $\{\emptyset,\{\emptyset\}\}$\\
+Therefore cardinality of c is 2.\\\\
+(d): Elements of set c are \verb|->| $\emptyset$ and $\{\emptyset,\{\emptyset,\{\emptyset\}\}\}$\\
+Therefore cardinality of d is 2.\\\\
+
+
+\newline
+\newline
+\newline
+\newline
+\newline
+\newline
+\newline
+\newline
+\newline
+
+
+
+
+\problem{3: Cartesian Product of Sets}{15}
+Explain why (A $\times$ B) $\times$ (C $\times$ D) and A $\times$ (B $\times$ C) $\times$ D are not the same.\\
+\solution
+\newline
+\textit{We know that x operation on sets will produce an ordered pair,} \\
+\textit{
+Let a subset of A = \{a\}\\
+Let a subset of B = \{b\}\\
+Let a subset of C = \{c\}\\
+Let a subset of D = \{d\}
+}\\\\
+The first element of two processes will be found this way below:\\
+$(A \times B) \times (C \times D) = ((a,b),(c,d))$\\
+$A \times ( B \times C) \times D = (a,(b,c),(d))$\\
+\newline
+Since ((a,b),(c,d)) $\neq$ (a,(b,c),(d)), \\
+The sets are not equal.
+\newline
+\newline
+\newline
+\newline
+\newline
+\newline
+\newline
+\newline
+
+\newpage
+\problem{4: Cartesian Product of Sets in Algorithms }{25}
+Let A, B and C be sets which have different cardinalities. Let (p, q, r) be each triple of A $\times$ B $\times$ C where p $\in$ A, q $\in$ B and r $\in$ C. Design an algorithm which finds all the triples that are satisfying the criteria: p $\leq$ q and q $\geq$ r. Write the pseudo code of the algorithm in your solution.\newline
+\newline
+For example: Let the set A, B and C be as A = $\{$ 3, 5, 7 $\}$, B = $\{$ 3, 6 $\}$ and C = $\{$ 4, 6, 9 $\}$. Then the output should be : $\{$ (3, 6, 4), (3, 6, 6), (5, 6, 4), (5, 6, 6) $\}$. \newline
+\newline
+(Note: Assume that you have sets of A, B, C as an input argument.)\newline
+\solution
+
+\begin{algorithm}
+\SetAlgoLined
+\KwIn{The sets of A, B, C}
+i \gets 0\\
+\While{i\leq lentgh(A)}{
+    j \gets 0\\
+    \While{j\leq length(B)}{
+        k \gets 0\\
+        \While{k \leq length(C)}{
+         \If{A[i]\leq B[i] \And C[i]\leq B[i]}{
+            
+            }
+        k \gets k + 1\\
+        }
+    j \gets j+1\\
+    }
+i \gets i + 1
+}
+
+ 
+
+\caption{Pseudo Code of Your Algorithm}
+\end{algorithm}
+
+\newpage
+\problem{5: Functions}{16}
+If f and f $\circ$ g are one-to-one, does it follow that g is one-to-one? Justify your answer.\\
+\solution
+\newline
+\textit{Suppose that g is not one-to-one;}\\\\
+So there must be two inputs of $x_1$ and $x_2$ where g($x_1$) = g($x_2$)\\
+We know that f o g is one-to-one, so there can't be two different input with the same value.\\
+So inequation will be \verb|->| f(g($x_1$)) $\neq$ f(g($x_2$))  (Because fog function has two different inputs.)\\
+let g($x_1$) and g($x_2$) = k since they have the same value.\\
+Inequation will be \verb|->| f(k) $\neq$ f(k);\\
+But we know that this inequation is wrong because f(k) = f(k)\\
+Therefore g must be one-to-one.
+
+\newline
+\newline
+\newline
+\newline
+\newline
+\newline
+\newline
+\newline
+\newline
+\newline
+\newline
+\newline
+\newline
+\newline
+\newline
+\newline
+
+\problem{6: Functions}{7+7+7=21}
+Determine whether the function $f:$ $\mathbb{Z}\times\mathbb{Z}\to\mathbb{Z}$ is onto if\\
+\subproblem{a} $f(m,n)=2m-n$\\
+\subproblem{b} $f(m,n)=m^2-n^2$\\
+\subproblem{c} $f(m,n)=\mid m\mid - \mid n\mid$\\
+\solution
+\newline
+(a): For any integer value of m, where n = 0; There exist an integer value where f(m,0) = 2m\\
+ For any integer value of m, where m = 0; There exist an integer value where f(0,n) = -n\\\\
+(b): Since any integer  value of m and n, function f cannot be less than 0,\\ 
+therefore this is not an onto function.\\\\
+(c): For any integer value of m and n, function f cannot be less than 0,\\
+therefore this is not an onto function.\\
+
+\newline
+
+\newpage
+\problem{7: Functions}{Bonus 20}
+Suppose that $f$ is a function from $A$ to $B$, where $A$ and $B$ are finite sets with $\mid A\mid=\mid B\mid$. Show that $f$ is one-to-one if and only if it is onto.\\
+\solution
+\newline
+\textit{Suppose that f is not one-to-one;}\\\\\\
+In that case, there must be two inputs of $x_1$ and $x_1$ where they satisfy the equation $f$($x_1$) = $f$($x_2$).\\\\
+Therefore the cardinality of codomain of $f$ will be greater than cardinality of image of f.\\\\
+Since there will be a value that is not matched in codomain of $f$, function $f$ cannot be onto in that case.\\\\
+Hence function f must be a one-to-one function.\\
+
+\newline
+
+\end{document} 
+
+
